@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
-
+import { Work_Sans } from '@next/font/google';
 import styles from './Header.module.css';
+
+const workSans = Work_Sans({ subsets: ['latin'] });
 
 function Menu() {
   return (
@@ -10,7 +12,7 @@ function Menu() {
         <Link href="/" className={styles.logo}>
           <Image src="/logo.png" alt="logo" width={95} height={95} />
         </Link>
-        <ul className={styles.list}>
+        <ul className={`${styles.list} ${workSans.className}`}>
           <li>
             <Link href="/" className={styles.link}>
               News

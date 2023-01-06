@@ -15,7 +15,7 @@
 
 .list {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 
   width: 60%;
 
@@ -23,9 +23,15 @@
 }
 
 .link {
-  font-size: 24px;
+  font-size: 22px;
   color: var(--main-white);
   text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.link:hover {
+  color: var(--main-red);
 }
 
 .logo {
@@ -35,6 +41,20 @@
 .discord {
   margin-left: auto;
   margin-right: 25px;
+
+  transition: 0.3s;
+}
+
+.discord:hover {
+  transform: scale(1.05);
+
+  transition: 0.3s;
+}
+
+.discord:active {
+  transform: scale(1);
+
+  transition: 0.3s;
 }
 
 .forum {

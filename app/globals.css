@@ -26,9 +26,21 @@ body {
   background-color: var(--main-yellow);
 }
 
-@font-face {
-  font-family: 'Tribeca Regular';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Tribeca Regular'), url('../fonts/TRIBECA_.woff') format('woff');
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--main-black);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--main-red);
+  border-radius: 20px;
+  border: 2px solid var(--main-black);
+}
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--main-red) var(--main-black);
 }
