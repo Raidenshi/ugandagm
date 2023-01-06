@@ -1,17 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import localFont from '@next/font/local';
-import { Work_Sans } from '@next/font/google';
 import mainLogo from '../public/mainLogo.png';
+import pastor from '../public/pastor.png';
+import { tribeca, workSans } from '../utils/fonts';
 
 import styles from './page.module.css';
 
-const font = localFont({ src: '../fonts/TRIBECA_.woff' });
-const workSans = Work_Sans({ subsets: ['latin'] });
-
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <>
       <Image
         src={mainLogo}
         alt="Main logo"
@@ -19,7 +16,7 @@ export default function Home() {
         className={styles.logo}
       />
       <div className={styles.pattern} />
-      <h1 className={`${font.className} ${styles.heading}`}>
+      <h1 className={`${tribeca.className} ${styles.heading}`}>
         WELCOME TO UGANDA!
       </h1>
       <iframe
@@ -30,7 +27,7 @@ export default function Home() {
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
-      ></iframe>
+      />
       <div className={styles.text}>
         <p className={workSans.className}>
           The home of bajs, trolls, zulu-warriors, streamsnipers and mic
@@ -57,13 +54,13 @@ export default function Home() {
       </div>
       <div className={styles.pastor__container}>
         <Image
-          src="/pastor.png"
+          src={pastor}
           width={375}
           height={375}
           alt="Pastor lul"
           className={styles.pastor}
         />
       </div>
-    </main>
+    </>
   );
 }

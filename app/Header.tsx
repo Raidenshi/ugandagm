@@ -1,16 +1,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Work_Sans } from '@next/font/google';
-import styles from './Header.module.css';
+import discordLink from '../public/discord-link.png';
+import logo from '../public/logo.png';
+import { workSans } from '../utils/fonts';
 
-const workSans = Work_Sans({ subsets: ['latin'] });
+import styles from './header.module.css';
 
 function Menu() {
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
         <Link href="/" className={styles.logo}>
-          <Image src="/logo.png" alt="logo" width={95} height={95} />
+          <Image src={logo} alt="logo" width={95} height={95} />
         </Link>
         <ul className={`${styles.list} ${workSans.className}`}>
           <li>
@@ -29,7 +30,7 @@ function Menu() {
             </Link>
           </li>
           <li>
-            <Link href="/" className={styles.link}>
+            <Link href="/wakaliwood" className={styles.link}>
               Uganda & Wakaliwood Studios
             </Link>
           </li>
@@ -44,12 +45,7 @@ function Menu() {
           target={'_blank'}
           className={styles.discord}
         >
-          <Image
-            src="/discord-link.png"
-            alt="discord link"
-            width={80}
-            height={80}
-          />
+          <Image src={discordLink} alt="discord link" width={80} height={80} />
         </Link>
         <Link href="/" className={styles.forum}>
           Forum

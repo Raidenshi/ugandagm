@@ -1,6 +1,8 @@
-import Footer from './Footer';
+import Footer from './footer';
 import './globals.css';
-import Header from './Header';
+import Header from './header';
+
+import styles from './page.module.css';
 
 export default function RootLayout({
   children,
@@ -12,7 +14,7 @@ export default function RootLayout({
       <head />
       <body>
         <Header />
-        {children}
+        <main className={styles.main}>{children}</main>
         <Footer />
       </body>
     </html>

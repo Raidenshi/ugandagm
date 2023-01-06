@@ -1,0 +1,17 @@
+.button {
+  padding: 8px;
+
+  border: 4px solid var(--main-red);
+  border-radius: 20px;
+  color: var(--main-black);
+
+  font-size: 28px;
+
+  transition: 0.3s;
+}
+
+.button:hover {
+  color: var(--main-white);
+  background-color: var(--main-red);
+  transition: 0.3s;
+}
