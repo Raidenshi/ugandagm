@@ -4,7 +4,7 @@ import wakaliwoodLogo from '../../public/WakaliWood_Logo.png';
 import { workSans } from '../../utils/fonts';
 import Button from '../components/ui/button/button';
 
-import styles from './page.module.css';
+import styles from './wakaliwood.module.css';
 
 function page() {
   return (

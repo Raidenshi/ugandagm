@@ -35,7 +35,7 @@ function Menu() {
             </Link>
           </li>
           <li>
-            <Link href="/" className={styles.link}>
+            <Link href="/join-the-zulu-army" className={styles.link}>
               Join The Zulu Army
             </Link>
           </li>
