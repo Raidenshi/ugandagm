@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: flex-start;
 
-  width: 1080px;
+  width: 756px;
 }
 
 .form {
@@ -15,9 +15,10 @@
   margin-bottom: 10px;
 }
 
-.form input[type='text'] {
-  width: 70%;
-  padding: 5px 5px;
+.form input:not([type='checkbox']),
+.form select {
+  width: 100%;
+  padding: 5px 10px;
   margin-bottom: 20px;
 
   background-color: var(--main-black);
@@ -26,6 +27,10 @@
 
   font-size: 18px;
   color: var(--main-red);
+}
+
+.form select {
+  width: auto;
 }
 
 .form input::placeholder {
@@ -76,4 +81,8 @@
 
 .custom__checkbox:focus + label::before {
   box-shadow: 0 0 0 0.2rem rgba(235, 30, 38, 0.25);
+}
+
+.send {
+  align-self: center;
 }

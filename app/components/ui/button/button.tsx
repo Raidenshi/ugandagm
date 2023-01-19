@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import { tribeca } from '../../../../utils/fonts';
 
 import styles from './button.module.css';
@@ -6,14 +6,19 @@ import styles from './button.module.css';
 function Button({
   children,
   className = '',
+  onClick,
 }: {
   children: string;
   className?: string;
+  onClick?: MouseEventHandler;
 }) {
   return (
-    <div className={`${styles.button} ${tribeca.className} ${className}`}>
+    <button
+      className={`${styles.button} ${tribeca.className} ${className}`}
+      onClick={onClick}
+    >
       {children}
-    </div>
+    </button>
   );
 }
 

@@ -48,19 +48,23 @@ export default function Rules() {
         </li>
         <li>
           Micspam is the Ugandan way of life, if you don’t like it, we probably
-          aren’t right for you
+          aren’t right for you.
         </li>
         <li>
           Gotta be active at least once every few weeks for as long as real life
-          allows you
+          allows you.
         </li>
         <li>
           Anyone found using any form of cheat/exploit in any game we’re playing
           will not only be removed from Uganda but reported by us to developers.
           If we need to cheat to win we aren’t doing it properly.
         </li>
-        <li>Weebs/Femboys/Furries/Any sort of degeneracy - out</li>
-        <li>No snitches</li>
+        <li>
+          By applying you confirm being over 18 years old, unless you personally
+          know admins.
+        </li>
+        <li>Weebs/Femboys/Furries/Any sort of degeneracy - out.</li>
+        <li>No snitches/leakers.</li>
       </ol>
       <hr />
     </div>
