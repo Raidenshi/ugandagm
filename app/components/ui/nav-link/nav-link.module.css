@@ -1,0 +1,19 @@
+.link {
+  box-sizing: border-box;
+  font-size: 22px;
+  color: var(--main-white);
+  text-decoration: none;
+
+  transition: ease-in 0.3s;
+}
+
+.active {
+  padding-bottom: 5px;
+  border-bottom: 3px solid var(--main-red);
+
+  transition: 0s;
+}
+
+.link:hover {
+  color: var(--main-red);
+}

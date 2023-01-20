@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  gap: 50px;
+  margin-bottom: var(--margin-footer);
+}
+
+.image {
+  border-radius: 50%;
+  border: 5px solid var(--main-red);
+}
+
+.image:hover {
+  transform: scale(1.1);
+}
+
+.name {
+  margin-bottom: 20px;
+
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.description {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}

@@ -1,43 +1,47 @@
-import Link from 'next/link';
+'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import discordLink from '../public/discord-link.png';
 import logo from '../public/logo.png';
 import { workSans } from '../utils/fonts';
+import { usePathname } from 'next/navigation';
+import NavLink from './components/ui/nav-link/nav-link';
 
 import styles from './header.module.css';
 
 function Menu() {
+  const pathName = usePathname();
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
         <Link href="/" className={styles.logo}>
-          <Image src={logo} alt="logo" width={95} height={95} />
+          <Image src={logo} alt="logo" width={95} height={95} priority />
         </Link>
         <ul className={`${styles.list} ${workSans.className}`}>
           <li>
-            <Link href="/" className={styles.link}>
+            <NavLink path="/news" currentPath={pathName!}>
               News
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link href="/" className={styles.link}>
+            <NavLink path="/gallery" currentPath={pathName!}>
               Gallery
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link href="/" className={styles.link}>
+            <NavLink path="/content-creators" currentPath={pathName!}>
               Content Creators
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link href="/wakaliwood" className={styles.link}>
+            <NavLink path="/wakaliwood" currentPath={pathName!}>
               Uganda & Wakaliwood Studios
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link href="/join-the-zulu-army" className={styles.link}>
+            <NavLink path="/join-the-zulu-army" currentPath={pathName!}>
               Join The Zulu Army
-            </Link>
+            </NavLink>
           </li>
         </ul>
         <Link
