@@ -1,8 +1,9 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { workSans } from '../../utils/fonts';
 import Rules from '../components/rules/rules';
 import Button from '../components/ui/button/button';
+import PocketBase from 'pocketbase';
 
 import styles from './join-the-zulu.module.css';
 
@@ -22,7 +23,7 @@ interface IForm {
   discord?: string;
   twitch?: string;
   howFound?: string;
-  affiliates?: string;
+  friends?: string;
   timeZone?: string;
   gamesPlayed?: games;
   otherCommunities?: 'yes' | 'no';
@@ -34,12 +35,14 @@ interface IForm {
 }
 
 export default function JoinTheZulu() {
+  const pb = new PocketBase('http://127.0.0.1:8090');
+
   const initialState: IForm = {
     steam: '',
     discord: '',
     twitch: '',
     howFound: '',
-    affiliates: '',
+    friends: '',
     timeZone: '',
     gachi: '',
     country: '',
@@ -56,10 +59,10 @@ export default function JoinTheZulu() {
     useSelect(!select);
   };
 
-  const handleSumbit = (e: React.SyntheticEvent) => {
+  const handleSumbit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    setForm(initialState);
-    console.log('submit');
+    await pb.collection('pending_applications').create(form);
+    await setForm(initialState);
   };
 
   const handleChange = (event: any) => {
@@ -73,6 +76,8 @@ export default function JoinTheZulu() {
       setForm({ ...form, [name]: value });
     }
   };
+
+  useEffect(() => window.document.scrollingElement?.scrollTo(0, 0), []);
 
   return (
     <>
@@ -125,15 +130,15 @@ export default function JoinTheZulu() {
             autoComplete="off"
           />
 
-          <label htmlFor="affiliates">
+          <label htmlFor="friends">
             Do you know anyone currently in Uganda?
           </label>
           <input
-            value={form.affiliates || ''}
+            value={form.friends || ''}
             onChange={handleChange}
-            name="affiliates"
+            name="friends"
             type="text"
-            id="affiliates"
+            id="friends"
             autoComplete="off"
           />
 

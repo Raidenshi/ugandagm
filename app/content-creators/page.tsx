@@ -11,7 +11,13 @@ export default async function ContentCreators() {
   ).items;
 
   const creatorsList: React.ReactNode = records.map((record: any) => {
-    return <ContentCreator contentCreator={record} key={record.id} />;
+    return (
+      <ContentCreator
+        contentCreator={record}
+        key={record.id}
+        picture={pb.getFileUrl(record, record.picture)}
+      />
+    );
   });
 
   return (

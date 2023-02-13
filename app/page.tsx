@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import mainLogo from '../public/mainLogo.png';
-import pastor from '../public/pastor.png';
+import mainLogo from '../public/mainLogo.webp';
+import pastor from '../public/pastor.webp';
 import { tribeca, workSans } from '../utils/fonts';
 
 import styles from './page.module.css';
@@ -20,13 +20,12 @@ export default function Home() {
         WELCOME TO UGANDA!
       </h1>
       <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/9lpdZh2h6Is"
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        src="https://player.cloudinary.com/embed/?public_id=UgandaPromotional_mwdnnz&cloud_name=dqjvkuczs&player[colors][base]=%23343738&player[colors][accent]=%23eb1e26&player[colors][text]=%23efefef&player[posterOptions][transformation][startOffset]=100"
+        width="640"
+        height="360"
+        allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
         allowFullScreen
+        frameBorder="0"
       />
       <div className={styles.text}>
         <p className={workSans.className}>
@@ -47,7 +46,7 @@ export default function Home() {
         </p>
         <p className={workSans.className}>
           If you are interested in joining Uganda, head on over to{' '}
-          <Link href="#" className={styles.link}>
+          <Link href="/join-the-zulu-army" className={styles.link}>
             Join the Zulu Army
           </Link>
         </p>

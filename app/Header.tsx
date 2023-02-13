@@ -1,8 +1,8 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import discordLink from '../public/discord-link.png';
-import logo from '../public/logo.png';
+import discordLink from '../public/discord-link.webp';
+import logo from '../public/logo.webp';
 import { workSans } from '../utils/fonts';
 import { usePathname } from 'next/navigation';
 import NavLink from './components/ui/nav-link/nav-link';

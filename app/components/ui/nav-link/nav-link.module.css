@@ -17,3 +17,8 @@
 .link:hover {
   color: var(--main-red);
 }
+
+.active:hover {
+  color: var(--main-white);
+  cursor: default;
+}

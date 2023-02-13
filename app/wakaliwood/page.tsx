@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import wakaliwoodLogo from '../../public/WakaliWood_Logo.png';
+import wakaliwoodLogo from '../../public/WakaliWood_Logo.webp';
 import { workSans } from '../../utils/fonts';
 import Button from '../components/ui/button/button';
 

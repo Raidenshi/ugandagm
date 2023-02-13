@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  gap: 40px;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.footer_margin {
+  margin-bottom: var(--margin-footer);
+}
+
+.title {
+  margin-bottom: 15px;
+
+  font-size: 26px;
+}
+
+.text_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text {
+  margin-bottom: 20px;
+
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.date {
+  font-size: 20px;
+}
+
+.image {
+  min-width: 400px;
+  max-width: 400px;
+}

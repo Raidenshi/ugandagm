@@ -9,11 +9,12 @@ import styles from './content-creator.module.css';
 
 export default function ContentCreator({
   contentCreator,
+  picture,
 }: {
   contentCreator: IContentCreator;
+  picture: string;
 }) {
-  const { name, link, description, picture } = contentCreator;
-
+  const { name, link, description } = contentCreator;
   return (
     <div className={`${workSans.className} ${styles.container}`}>
       <Link href={link} target={'_blank'}>
