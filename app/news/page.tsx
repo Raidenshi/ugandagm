@@ -5,9 +5,11 @@ import styles from './news.module.css';
 
 export default async function News() {
   const pb = new PocketBase('http://127.0.0.1:8090');
-  const records: any = await (await pb.collection('news').getList()).items;
+  const records: any = await (
+    await pb.collection('news').getList()
+  ).items.reverse();
 
-  const news: React.ReactNode = records.map((record: any, index: number) => {
+  const news: any = records.map((record: any, index: number) => {
     if (index === records.length - 1) {
       return (
         <NewsItem

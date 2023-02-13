@@ -21,7 +21,6 @@ export default function NewsItem({
   last?: boolean;
 }) {
   const { header, text, created } = news;
-  console.log(news);
   const date = new Date(created).toLocaleDateString();
 
   return (
