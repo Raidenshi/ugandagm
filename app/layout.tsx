@@ -1,3 +1,4 @@
+import { SessionProvider } from 'next-auth/react';
 import Footer from './footer';
 import './globals.css';
 import Header from './header';

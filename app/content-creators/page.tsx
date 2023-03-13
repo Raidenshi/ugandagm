@@ -1,14 +1,14 @@
 import PocketBase from 'pocketbase';
 import { tribeca } from '../../utils/fonts';
 import ContentCreator from '../components/content-creator/content-creator';
+import { dbURL } from '../../utils/const';
+import { getRecords } from '../../services/pocketBase';
 
 import styles from './content-creators.module.css';
 
 export default async function ContentCreators() {
-  const pb = new PocketBase('http://127.0.0.1:8090');
-  const records: any = await (
-    await pb.collection('content_creators').getList()
-  ).items;
+  const pb = new PocketBase(dbURL);
+  const records: any = await getRecords('content_creators', pb);
 
   const creatorsList: React.ReactNode = records.map((record: any) => {
     return (

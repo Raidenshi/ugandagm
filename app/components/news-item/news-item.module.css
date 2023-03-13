@@ -35,6 +35,7 @@
 }
 
 .image {
+  margin-top: 45px;
   min-width: 400px;
-  max-width: 400px;
+  height: 100%;
 }

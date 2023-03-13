@@ -6,7 +6,7 @@ import Button from '../components/ui/button/button';
 
 import styles from './wakaliwood.module.css';
 
-function page() {
+function Wakaliwood() {
   return (
     <>
       <Image src={wakaliwoodLogo} alt="Wakaliwood logo" width={550} />
@@ -34,4 +34,4 @@ function page() {
   );
 }
 
-export default page;
+export default Wakaliwood;

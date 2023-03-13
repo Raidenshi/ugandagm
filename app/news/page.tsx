@@ -1,13 +1,14 @@
 import PocketBase from 'pocketbase';
 import NewsItem from '../components/news-item/news-item';
+import { dbURL } from '../../utils/const';
+import { getRecords } from '../../services/pocketBase';
 
 import styles from './news.module.css';
 
 export default async function News() {
-  const pb = new PocketBase('http://127.0.0.1:8090');
-  const records: any = await (
-    await pb.collection('news').getList()
-  ).items.reverse();
+  const pb = new PocketBase(dbURL);
+  let records: any = await getRecords('news', pb);
+  records = records.reverse();
 
   const news: any = records.map((record: any, index: number) => {
     if (index === records.length - 1) {

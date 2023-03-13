@@ -51,7 +51,7 @@ function Menu() {
         >
           <Image src={discordLink} alt="discord link" width={80} height={80} />
         </Link>
-        <Link href="/" className={styles.forum}>
+        <Link href="/forum" className={styles.forum}>
           Forum
         </Link>
       </nav>

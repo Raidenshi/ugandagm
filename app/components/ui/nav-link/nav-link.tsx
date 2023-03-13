@@ -15,7 +15,9 @@ export default function NavLink({
   return (
     <Link
       href={path}
-      className={`${styles.link} ${currentPath === path ? styles.active : ''}`}
+      className={`${styles.link} ${
+        currentPath.split('/')[1] === path.split('/')[1] ? styles.active : ''
+      }`}
     >
       {children}
     </Link>
