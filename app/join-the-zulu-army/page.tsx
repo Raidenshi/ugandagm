@@ -15,6 +15,7 @@ interface games {
   newWorld?: boolean;
   wow?: boolean;
   arkSurvivial?: boolean;
+  rust?: boolean;
   mugaGames?: boolean;
 }
 
@@ -26,12 +27,14 @@ interface IForm {
   friends?: string;
   timeZone?: string;
   gamesPlayed?: games;
-  otherCommunities?: 'yes' | 'no';
+  otherCommunities?: string;
   gachi?: string;
   country?: string;
   language?: string;
   reason?: string;
   add?: string;
+  yes?: string[];
+  no?: string[];
 }
 
 export default function JoinTheZulu() {
@@ -50,6 +53,8 @@ export default function JoinTheZulu() {
     reason: '',
     add: '',
     gamesPlayed: {},
+    yes: [],
+    no: [],
     otherCommunities: 'no',
   };
   const [select, useSelect] = useState(false);
@@ -244,6 +249,18 @@ export default function JoinTheZulu() {
           </label>
 
           <input
+            className={styles.custom__checkbox}
+            onChange={handleChange}
+            checked={form.gamesPlayed?.rust}
+            name="rust"
+            type="checkbox"
+            id="rust"
+          />
+          <label className={styles.checkbox__label} htmlFor="rust">
+            Rust
+          </label>
+
+          <input
             onChange={handleChange}
             checked={form.gamesPlayed?.mugaGames}
             name="mugaGames"
@@ -256,17 +273,18 @@ export default function JoinTheZulu() {
           </label>
 
           <label htmlFor="otherCommunities">
-            Have you played in other gaming communities before?
+            Have you being part of other communities?{' '}
+            <span>( List them, if you did )</span>
           </label>
-          <select
-            value={form.otherCommunities}
+          <input
             onChange={handleChange}
+            value={form.otherCommunities}
             name="otherCommunities"
+            type="text"
             id="otherCommunities"
-          >
-            <option value="no">No</option>
-            <option value="yes">Yes</option>
-          </select>
+            required
+            autoComplete="off"
+          />
 
           <label htmlFor="gachi">Do you lika gachi ?</label>
           <input
@@ -317,7 +335,9 @@ export default function JoinTheZulu() {
             autoComplete="off"
           />
 
-          <label htmlFor="add">Anything else you like to add ?</label>
+          <label htmlFor="add">
+            Is there anything else you would like to add ?
+          </label>
           <input
             onChange={handleChange}
             value={form.add}

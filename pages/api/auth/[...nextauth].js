@@ -6,19 +6,44 @@ export const authOptions = {
     DiscordProvider({
       clientId: process.env.DISCORD_CLIENT_ID,
       clientSecret: process.env.DISCORD_CLIENT_SECRET,
-      authorization: { params: { scope: 'identify guilds' } },
+      authorization:
+        'https://discord.com/api/oauth2/authorize?scope=identify+guilds+guilds.members.read',
     }),
   ],
   callbacks: {
+    async signIn({ user, account, profile, email, credentials }) {
+      const guildMemeber = await fetch(
+        `https://discordapp.com/api/users/@me/guilds/553221799194918949/member`,
+        {
+          headers: {
+            Authorization: `Bearer ${account.access_token}`,
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          return data;
+        });
+      if (guildMemeber.roles.includes('672048184918409217')) {
+        return true;
+      } else return false;
+    },
     session: async ({ session, token }) => {
       if (session?.user) {
         session.user.id = token.uid;
+        session.accessToken = token.accessToken;
       }
       return session;
     },
-    jwt: async ({ user, token }) => {
+    jwt: async ({ user, token, account }) => {
       if (user) {
         token.uid = user.id;
+      }
+      if (account) {
+        token.accessToken = account.access_token;
       }
       return token;
     },

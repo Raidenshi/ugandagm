@@ -1,14 +1,14 @@
 'use client';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useEffect } from 'react';
+import Loader from '../components/ui/loader/loader';
+import Application from '../components/application/application';
 
 export default function Forum() {
   const { data: session, status } = useSession();
 
-  console.log(status);
-
   if (status === 'loading') {
-    return <p>Loading...</p>;
+    return <Loader />;
   }
 
   if (status === 'unauthenticated') {
@@ -16,6 +16,6 @@ export default function Forum() {
   }
 
   if (status === 'authenticated') {
-    return <button onClick={() => signOut()}>Sign out</button>;
+    return <Application />;
   }
 }

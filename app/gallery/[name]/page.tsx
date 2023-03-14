@@ -1,8 +1,5 @@
 'use client';
-import PocketBase from 'pocketbase';
 import { dbURL } from '../../../utils/const';
-import { redirect } from 'next/navigation';
-import { getRecords } from '../../../services/pocketBase';
 import { useEffect, useState } from 'react';
 import { tribeca } from '../../../utils/fonts';
 import Image from 'next/image';
@@ -12,7 +9,6 @@ import styles from '../gallery.module.css';
 export default function page({ params }: any) {
   const [isLoading, setLoading] = useState(false);
   const [records, setRecords]: any = useState(null);
-  const pb = new PocketBase(dbURL);
 
   useEffect(() => {
     setLoading(true);
