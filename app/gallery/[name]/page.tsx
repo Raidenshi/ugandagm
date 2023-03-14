@@ -5,6 +5,7 @@ import { tribeca } from '../../../utils/fonts';
 import Image from 'next/image';
 
 import styles from '../gallery.module.css';
+import NotFound from '../../components/ui/not-found/not-found';
 
 export default function page({ params }: any) {
   const [isLoading, setLoading] = useState(false);
@@ -23,12 +24,7 @@ export default function page({ params }: any) {
   if (isLoading) return <p>Loading...</p>;
   if (!records)
     return (
-      <>
-        <p className={`${styles.not_found} ${tribeca.className}`}>
-          Nothing Here
-        </p>
-        <Image src="/ZULUL.webp" alt="ZULUL" width="200" height="200" />
-      </>
+      <NotFound />
     );
 
   return <p>{records && records[0].collectionName}</p>;
