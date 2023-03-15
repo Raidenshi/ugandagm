@@ -1,0 +1,123 @@
+.burger {
+  width: 30px;
+  height: 30px;
+
+  margin-left: auto;
+
+  position: relative;
+  z-index: 20;
+
+  cursor: pointer;
+}
+
+.burger:before {
+  width: 30px;
+  height: 5px;
+
+  content: '';
+  position: absolute;
+  top: 0;
+
+  border-radius: 2px;
+
+  background-color: var(--main-red);
+}
+
+.burger:after {
+  width: 30px;
+  height: 5px;
+
+  content: '';
+  position: absolute;
+  bottom: 0;
+
+  border-radius: 2px;
+
+  background-color: var(--main-red);
+}
+
+.burger span {
+  width: 30px;
+  height: 5px;
+
+  position: absolute;
+  bottom: 12.5px;
+
+  border-radius: 2px;
+
+  background-color: var(--main-red);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  right: 0;
+  top: 0px;
+
+  width: 35vw;
+  height: 100vh;
+
+  background-color: var(--main-black);
+  border-left: 4px solid var(--main-red);
+
+  list-style: none;
+  z-index: 100;
+
+  transition: 0.3s ease-in;
+}
+
+.menu li:first-child {
+  margin-top: 60px;
+}
+
+.menu li {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.menu li a {
+  color: var(--main-white);
+  text-decoration: none;
+}
+
+.close {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+
+  cursor: pointer;
+}
+
+.active {
+  transform: translateX(36vw);
+}
+
+@media (max-width: 1080px) {
+  .menu li {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 880px) {
+  .menu {
+    width: 45vw;
+  }
+
+  .active {
+    transform: translateX(46vw);
+  }
+}
+
+@media (max-width: 680px) {
+  .menu {
+    width: 100vw;
+  }
+
+  .active {
+    transform: translateX(101vw);
+  }
+}

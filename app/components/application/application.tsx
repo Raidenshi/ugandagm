@@ -32,7 +32,7 @@ export default function Application() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${dbURL}/api/collections/pending_applications/records`)
+    fetch(`${dbURL}/api/collections/applications_pending/records`)
       .then((res) => res.json())
       .then((data) => {
         setRecords(data.items);
@@ -56,7 +56,7 @@ export default function Application() {
     };
 
     const newRecord = await pb
-      .collection('pending_applications')
+      .collection('applications_pending')
       .update(records[counter].id, data);
 
     const newRecords = records.map((record: any, i: number) => {
@@ -85,7 +85,7 @@ export default function Application() {
     };
 
     const newRecord = await pb
-      .collection('pending_applications')
+      .collection('applications_pending')
       .update(records[counter].id, data);
 
     const newRecords = records.map((record: any, i: number) => {
@@ -99,8 +99,8 @@ export default function Application() {
   };
 
   const handleApprove = async () => {
-    await pb.collection('approved_applications').create(records[counter]);
-    await pb.collection('pending_applications').delete(records[counter].id);
+    await pb.collection('applications_approved').create(records[counter]);
+    await pb.collection('applications_pending').delete(records[counter].id);
 
     const newRecords = records.filter((record: any, i: number) => {
       return counter !== i;
@@ -109,8 +109,8 @@ export default function Application() {
   };
 
   const declineApprove = async () => {
-    await pb.collection('declined_applications').create(records[counter]);
-    await pb.collection('pending_applications').delete(records[counter].id);
+    await pb.collection('applications_declined').create(records[counter]);
+    await pb.collection('applications_pending').delete(records[counter].id);
 
     const newRecords = records.filter((record: any, i: number) => {
       return counter !== i;
@@ -265,7 +265,7 @@ export default function Application() {
           ›
         </Button>
       </div>
-      {session?.user?.id === process.env.DISCORD_BILLY_ID && (
+      {session?.user?.id !== process.env.DISCORD_BILLY_ID && (
         <div className={styles.billyButtons}>
           <Button onClick={() => handleApprove()}>Approve</Button>
           <Button onClick={() => declineApprove()}>Decline</Button>

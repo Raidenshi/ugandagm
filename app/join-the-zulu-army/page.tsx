@@ -66,7 +66,7 @@ export default function JoinTheZulu() {
 
   const handleSumbit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    await pb.collection('pending_applications').create(form);
+    await pb.collection('applications_pending').create(form);
     await setForm(initialState);
   };
 

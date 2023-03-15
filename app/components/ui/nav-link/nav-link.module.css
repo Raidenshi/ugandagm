@@ -22,3 +22,15 @@
   color: var(--main-white);
   cursor: default;
 }
+
+@media (min-width: 2048px) {
+  .link {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .link {
+    font-size: 18px;
+  }
+}

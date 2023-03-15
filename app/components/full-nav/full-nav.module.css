@@ -1,0 +1,69 @@
+.list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 150px;
+  flex-grow: 1;
+
+  list-style: none;
+}
+
+.discord {
+  margin-right: 25px;
+
+  transition: 0.3s;
+}
+
+.discord:hover {
+  transform: scale(1.05);
+
+  transition: 0.3s;
+}
+
+.discord:active {
+  transform: scale(1);
+
+  transition: 0.3s;
+}
+
+.forum {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 150px;
+  height: 70px;
+
+  background-color: transparent;
+  border: 4px solid var(--main-red);
+  border-radius: 35px;
+
+  font-size: 24px;
+  color: var(--main-white);
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.forum:hover {
+  background-color: var(--main-red);
+}
+
+@media (min-width: 2048px) {
+  .list {
+    margin: 0 150px;
+  }
+}
+
+@media (max-width: 1850px) {
+  .list {
+    margin: 0 100px;
+  }
+}
+
+@media (max-width: 1720px) {
+  .list {
+    margin: 0 50px;
+  }
+}
