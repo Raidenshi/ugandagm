@@ -21,7 +21,7 @@ export default function Home() {
       </h1>
       <iframe
         src="https://player.cloudinary.com/embed/?public_id=UgandaPromotional_mwdnnz&cloud_name=dqjvkuczs&player[colors][base]=%23343738&player[colors][accent]=%23eb1e26&player[colors][text]=%23efefef&player[posterOptions][transformation][startOffset]=100"
-        width="640"
+        width={640}
         height="360"
         allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
         allowFullScreen

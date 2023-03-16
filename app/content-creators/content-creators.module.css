@@ -1,9 +1,10 @@
 .container {
-  width: 600px;
+  max-width: 600px;
 }
 
 .header {
   margin-bottom: 90px;
+  text-align: center;
 
   font-weight: 400;
   font-size: 42px;

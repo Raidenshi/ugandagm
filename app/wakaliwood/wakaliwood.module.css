@@ -7,7 +7,7 @@
 
 .text {
   margin-top: 20px;
-  width: 700px;
+  max-width: 700px;
   font-size: 22px;
   line-height: 1.5em;
   font-weight: 600;
@@ -15,4 +15,20 @@
 
 .button__wakaliwood {
   text-decoration: none;
+  margin-top: 20px;
+  margin-bottom: var(--margin-footer);
+}
+
+@media (max-width: 720px) {
+  .text {
+    font-size: 16px;
+  }
+  .heading {
+    font-size: 32px;
+  }
+
+  .image {
+    width: 90vw;
+    height: fit-content;
+  }
 }

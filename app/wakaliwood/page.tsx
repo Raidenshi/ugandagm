@@ -9,7 +9,12 @@ import styles from './wakaliwood.module.css';
 function Wakaliwood() {
   return (
     <>
-      <Image src={wakaliwoodLogo} alt="Wakaliwood logo" width={550} />
+      <Image
+        src={wakaliwoodLogo}
+        alt="Wakaliwood logo"
+        width={550}
+        className={styles.image}
+      />
       <h1 className={`${workSans.className} ${styles.heading}`}>
         Uganda ♡ Wakaliwood
       </h1>

@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 60px 110px 0 110px;
   min-height: 100vh;
 }
@@ -62,7 +61,7 @@
   position: absolute;
   left: 100%;
 
-  width: 19.5vw;
+  width: 20vw;
   height: fit-content;
 
   transform: translate(-110%, calc(-100% + 10px));
@@ -70,6 +69,10 @@
 }
 
 @media (max-width: 620px) {
+  .main {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
   .logo {
     width: 90vw;
     height: fit-content;
