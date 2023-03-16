@@ -3,5 +3,14 @@
   flex-wrap: wrap;
   gap: 90px;
 
-  max-width: 1080px;
+  max-width: 1300px;
+}
+
+.buttons {
+  align-self: flex-start;
+}
+
+.buttons button {
+  margin-left: 30px;
+  margin-bottom: 40px;
 }

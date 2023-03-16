@@ -265,7 +265,7 @@ export default function Application() {
           ›
         </Button>
       </div>
-      {session?.user?.id !== process.env.DISCORD_BILLY_ID && (
+      {session?.user?.id === process.env.DISCORD_BILLY_ID && (
         <div className={styles.billyButtons}>
           <Button onClick={() => handleApprove()}>Approve</Button>
           <Button onClick={() => declineApprove()}>Decline</Button>

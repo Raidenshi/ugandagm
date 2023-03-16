@@ -78,3 +78,9 @@
     height: fit-content;
   }
 }
+
+@media (max-width: 800px) {
+  .pastor {
+    width: 30vw;
+  }
+}

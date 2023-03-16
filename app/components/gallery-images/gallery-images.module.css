@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container img {
+  max-width: 700px;
+}
+
+.masonry {
+  margin-bottom: var(--margin-footer);
+}
