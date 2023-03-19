@@ -10,7 +10,7 @@ function Footer() {
         target={'_blank'}
         className={styles.footer__link}
       >
-        Discord.gg/Uganda
+        discord.gg/Uganda
       </Link>
       <Link
         href="https://imgur.com/RxbVYe7"

@@ -44,13 +44,17 @@ export default function Application() {
     if (records[counter].yes.includes(session?.user?.name)) {
       return;
     }
-    const filteredNO = records[counter].no.filter(
+    const freshRecord = await pb
+      .collection('applications_pending')
+      .getOne(records[counter].id);
+
+    const filteredNO = freshRecord.no.filter(
       (name: string) => name !== session?.user?.name
     );
-    const changedYES = [session?.user?.name, ...records[counter].yes];
+    const changedYES = [session?.user?.name, ...freshRecord.yes];
 
     const data = {
-      ...records[counter],
+      ...freshRecord,
       yes: changedYES,
       no: filteredNO,
     };
@@ -73,13 +77,17 @@ export default function Application() {
     if (records[counter].no.includes(session?.user?.name)) {
       return;
     }
-    const filteredYES = records[counter].yes.filter(
+    const freshRecord = await pb
+      .collection('applications_pending')
+      .getOne(records[counter].id);
+
+    const filteredYES = freshRecord.yes.filter(
       (name: string) => name !== session?.user?.name
     );
-    const changedNO = [session?.user?.name, ...records[counter].no];
+    const changedNO = [session?.user?.name, ...freshRecord.no];
 
     const data = {
-      ...records[counter],
+      ...freshRecord,
       yes: filteredYES,
       no: changedNO,
     };
@@ -147,12 +155,11 @@ export default function Application() {
           ‹
         </Button>
         <div className={`${styles.container} ${workSans.className}`}>
-          {session?.user?.id === process.env.DISCORD_BILLY_ID && (
-            <span className={styles.voted}>
-              People voted:{' '}
-              {records[counter].yes.length + records[counter].no.length}
-            </span>
-          )}
+          <span className={styles.voted}>
+            People voted:{' '}
+            {records[counter].yes.length + records[counter].no.length}
+          </span>
+
           <div className={styles.score_container}>
             <button
               className={`${styles.green} ${styles.button}`}
