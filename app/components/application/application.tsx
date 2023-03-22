@@ -16,7 +16,7 @@ export default function Application() {
   const [isLoading, setLoading] = useState(true);
   const [records, setRecords]: any = useState(null);
   const [counter, setCounter] = useState(0);
-  const { data: session } = useSession();
+  const { data: session }: any = useSession();
   const pb = new PocketBase(dbURL);
 
   const games: any = {
