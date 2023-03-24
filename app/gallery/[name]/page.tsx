@@ -15,10 +15,11 @@ export default function page({ params }: any) {
   const [toggle, setToggle] = useState('videos');
   const [isLoading, setLoading] = useState(false);
   const [records, setRecords]: any = useState(null);
+  const game = params.name;
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${dbURL}/api/collections/game_${params.name}/records`)
+    fetch(`${dbURL}/api/collections/game_${game}/records`)
       .then((res) => res.json())
       .then((data) => {
         setRecords(data.items[0]);
@@ -26,7 +27,6 @@ export default function page({ params }: any) {
       });
   }, []);
 
-  console.log(records);
   if (isLoading) return <Loader />;
   if (!records) return <NotFound />;
 
