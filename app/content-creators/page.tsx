@@ -7,6 +7,8 @@ import NotFound from '../components/ui/not-found/not-found';
 
 import styles from './content-creators.module.css';
 
+export const fetchCache = 'default-no-store';
+
 export default async function ContentCreators() {
   const pb = new PocketBase(dbURL);
   const records: any = (await getRecords('content_creators', pb)) || null;

@@ -11,6 +11,8 @@ import Button from '../../components/ui/button/button';
 import GalleryVideos from '../../components/gallery-videos/gallery-videos';
 import GalleryImages from '../../components/gallery-images/gallery-images';
 
+export const fetchCache = 'default-no-store';
+
 export default function page({ params }: any) {
   const [toggle, setToggle] = useState('videos');
   const [isLoading, setLoading] = useState(false);

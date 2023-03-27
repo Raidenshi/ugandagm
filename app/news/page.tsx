@@ -5,6 +5,8 @@ import { getRecords } from '../../services/pocketBase';
 
 import styles from './news.module.css';
 
+export const fetchCache = 'default-no-store';
+
 export default async function News() {
   const pb = new PocketBase(dbURL);
   let records: any = await getRecords('news', pb);
