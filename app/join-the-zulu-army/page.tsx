@@ -4,6 +4,7 @@ import { workSans } from '../../utils/fonts';
 import Rules from '../components/rules/rules';
 import Button from '../components/ui/button/button';
 import PocketBase from 'pocketbase';
+import { dbURL } from '../../utils/const';
 
 import styles from './join-the-zulu.module.css';
 
@@ -38,7 +39,7 @@ interface IForm {
 }
 
 export default function JoinTheZulu() {
-  const pb = new PocketBase('http://127.0.0.1:8090');
+  const pb = new PocketBase(dbURL);
 
   const initialState: IForm = {
     steam: '',
