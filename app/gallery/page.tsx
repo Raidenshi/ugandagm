@@ -4,7 +4,7 @@ import GalleryCard from '../components/gallery-card/gallery-card';
 
 import styles from './gallery.module.css';
 
-export const fetchCache = 'default-no-store';
+export const revalidate = 0;
 
 export default async function Gallery() {
   const pb = new PocketBase(dbURL);

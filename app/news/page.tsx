@@ -5,7 +5,7 @@ import { getRecords } from '../../services/pocketBase';
 
 import styles from './news.module.css';
 
-export const fetchCache = 'default-no-store';
+export const revalidate = 0;
 
 export default async function News() {
   const pb = new PocketBase(dbURL);

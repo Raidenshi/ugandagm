@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import Loader from '../components/ui/loader/loader';
 import Application from '../components/application/application';
 
-export const fetchCache = 'default-no-store';
+export const revalidate = 0;
 
 export default function Forum() {
   const { data: session, status } = useSession();
