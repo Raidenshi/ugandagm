@@ -31,51 +31,6 @@
   overflow: hidden;
 }
 
-.score_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 60px;
-  height: 40px;
-
-  margin: 0 15px;
-  border-radius: 5px;
-  border: none;
-
-  font-size: 18px;
-
-  color: var(--main-white);
-  background-color: var(--main-red);
-
-  cursor: pointer;
-
-  transition: 0.3s;
-}
-
-.button:hover {
-  scale: 1.1;
-}
-
-.button:active {
-  scale: 0.98;
-}
-
-.green {
-  background-color: green;
-}
-
-.score {
-  color: var(--main-white);
-  font-size: 20px;
-}
-
 .container p {
   margin-bottom: 20px;
 }
