@@ -59,10 +59,7 @@ export default function Rules() {
           will not only be removed from Uganda but reported by us to developers.
           If we need to cheat to win we aren’t doing it properly.
         </li>
-        <li>
-          By applying you confirm being over 18 years old, unless you personally
-          know admins.
-        </li>
+        <li>By applying you confirm being over 18 years old.</li>
         <li>Weebs/Femboys/Furries/Any sort of degeneracy - out.</li>
         <li>No snitches/leakers.</li>
       </ol>

@@ -11,6 +11,7 @@ import PocketBase from 'pocketbase';
 import styles from './application.module.css';
 import { useSession } from 'next-auth/react';
 import NotFound from '../ui/not-found/not-found';
+import YesNo from '../yes-no/yes-no';
 
 export default function Application() {
   const [isLoading, setLoading] = useState(true);
@@ -159,21 +160,12 @@ export default function Application() {
             People voted:{' '}
             {records[counter].yes.length + records[counter].no.length}
           </span>
-
-          <div className={styles.score_container}>
-            <button
-              className={`${styles.green} ${styles.button}`}
-              onClick={() => handleIncrease()}
-            >
-              yes
-            </button>
-            <div className={styles.score}>
-              {records[counter].yes.length - records[counter].no.length}
-            </div>
-            <button className={styles.button} onClick={() => handleDecrease()}>
-              no
-            </button>
-          </div>
+          <YesNo
+            yes={records[counter].yes.length}
+            no={records[counter].no.length}
+            handleIncrease={handleIncrease}
+            handleDecrease={handleDecrease}
+          />
           <p>
             <span>Discord:</span>
             {records[counter].discord}
@@ -211,15 +203,15 @@ export default function Application() {
             </Link>
           </p>
           <div className={styles.question}>
-            <span>How did you find Uganda ?</span>
+            <span>How did you find Uganda?</span>
             <p>{records[counter].howFound}</p>
           </div>
           <div className={styles.question}>
-            <span>Do you know anyone currently in Uganda ?</span>
+            <span>Do you know anyone currently in Uganda?</span>
             <p>{records[counter].friends}</p>
           </div>
           <div className={styles.question}>
-            <span>What is your timezone ?</span>
+            <span>What is your timezone?</span>
             <p>{records[counter].timeZone}</p>
           </div>
 
@@ -238,16 +230,16 @@ export default function Application() {
             </ul>
           </div>
           <div className={styles.question}>
-            <span>Any other communities ?</span>
+            <span>Any other communities?</span>
             <p>{records[counter].otherCommunities}</p>
           </div>
           <div className={styles.question}>
-            <span>Do you like gachi ?</span>
+            <span>Do you like gachi?</span>
             <p>{records[counter].gachi}</p>
           </div>
 
           <div className={styles.question}>
-            <span>What country are you from ?</span>
+            <span>What country are you from?</span>
             <p>{records[counter].country}</p>
           </div>
           <div className={styles.question}>
@@ -257,11 +249,11 @@ export default function Application() {
             <p>{records[counter].language}</p>
           </div>
           <div className={styles.question}>
-            <span>Why are you applying ?</span>
+            <span>Why are you applying?</span>
             <p>{records[counter].reason}</p>
           </div>
           <div className={styles.question}>
-            <span>Is there anything else you would like to add ?</span>
+            <span>Is there anything else you would like to add?</span>
             <p>{records[counter].add}</p>
           </div>
           <span className={styles.page}>{`${counter + 1}/${

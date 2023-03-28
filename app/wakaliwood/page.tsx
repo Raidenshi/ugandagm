@@ -29,7 +29,7 @@ function Wakaliwood() {
         </p>
       </div>
       <Link
-        href="https://www.wakaliwood.com/"
+        href="https://wakaliwood.com/"
         target="_blank"
         className={styles.button__wakaliwood}
       >

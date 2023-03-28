@@ -31,7 +31,6 @@ export default async function ContentCreators() {
       <div className={styles.container}>
         {records ? creatorsList : <NotFound />}
       </div>
-      ;
     </>
   );
 }

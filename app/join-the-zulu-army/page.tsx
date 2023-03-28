@@ -275,7 +275,7 @@ export default function JoinTheZulu() {
           </label>
 
           <label htmlFor="otherCommunities">
-            Have you being part of other communities?{' '}
+            Have you been a part of other communities?{' '}
             <span>( List them, if you did )</span>
           </label>
           <input
@@ -288,7 +288,7 @@ export default function JoinTheZulu() {
             autoComplete="off"
           />
 
-          <label htmlFor="gachi">Do you lika gachi ?</label>
+          <label htmlFor="gachi">Do you like gachi?</label>
           <input
             onChange={handleChange}
             value={form.gachi}
@@ -299,14 +299,14 @@ export default function JoinTheZulu() {
             autoComplete="off"
           />
 
-          <label htmlFor="country">What country are you from ?</label>
+          <label htmlFor="country">What country are you from?</label>
           <input
             onChange={handleChange}
             value={form.country}
             name="country"
             type="text"
             id="country"
-            placeholder="Yemen ?"
+            placeholder="Yemen?"
             required
             autoComplete="off"
           />
@@ -325,7 +325,7 @@ export default function JoinTheZulu() {
           />
 
           <label htmlFor="reason">
-            Why are you applying ? <span>( LULE )</span>
+            Why are you applying? <span>( LULE )</span>
           </label>
           <input
             onChange={handleChange}
@@ -338,7 +338,7 @@ export default function JoinTheZulu() {
           />
 
           <label htmlFor="add">
-            Is there anything else you would like to add ?
+            Is there anything else you would like to add?
           </label>
           <input
             onChange={handleChange}
