@@ -16,13 +16,12 @@ export default function NewsItem({
   last,
 }: {
   news: Inews;
-  image: string;
+  image?: string | null;
   index: number;
   last?: boolean;
 }) {
   const { header, text, created } = news;
   const date = new Date(created).toLocaleDateString();
-
   return (
     <>
       <div
@@ -40,7 +39,7 @@ export default function NewsItem({
           </div>
           <p className={styles.date}>-Billy Uganda {date}</p>
         </div>
-        <img className={styles.image} src={image} alt="" />
+        {image ? <img className={styles.image} src={image} alt="" /> : ''}
       </div>
       {!last ? <hr /> : ''}
     </>

@@ -36,6 +36,16 @@
 
 .image {
   margin-top: 45px;
-  min-width: 400px;
+  width: 400px;
   height: 100%;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+  .image {
+    max-width: 80vw;
+    height: fit-content;
+  }
 }

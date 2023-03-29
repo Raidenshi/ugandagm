@@ -68,6 +68,11 @@
   filter: drop-shadow(12px 0 0 var(--main-red));
 }
 
+.video {
+  width: 640px;
+  height: 360px;
+}
+
 @media (max-width: 620px) {
   .main {
     padding-left: 50px;
@@ -76,6 +81,10 @@
   .logo {
     width: 90vw;
     height: fit-content;
+  }
+  .video {
+    width: 95vw;
+    height: 55vw;
   }
 }
 

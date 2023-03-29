@@ -18,7 +18,9 @@ export default async function News() {
         <NewsItem
           key={record.id}
           news={record}
-          image={pb.getFileUrl(record, record.image)}
+          image={
+            records[index].image ? pb.getFileUrl(record, record.image) : null
+          }
           index={index}
           last={true}
         />
@@ -28,7 +30,9 @@ export default async function News() {
         <NewsItem
           key={record.id}
           news={record}
-          image={pb.getFileUrl(record, record.image)}
+          image={
+            records[index].image ? pb.getFileUrl(record, record.image) : null
+          }
           index={index}
         />
       );
