@@ -20,7 +20,7 @@ export default function ApplicationChat({
   counter: number;
   records: any;
 }) {
-  const { data: session } = useSession();
+  const { data: session }: any = useSession();
   const [textarea, setTextarea] = useState('');
 
   const handleSend = async () => {
@@ -31,11 +31,21 @@ export default function ApplicationChat({
       .collection('applications_pending')
       .getOne(record.id);
     if (hotRecord.msgs === null) {
-      hotRecord.msgs = [{ name: session?.user?.name, text: textarea }];
+      hotRecord.msgs = [
+        {
+          name: session?.user?.name,
+          text: textarea,
+          image: session.user.image,
+        },
+      ];
     } else {
       hotRecord.msgs = [
         ...hotRecord.msgs,
-        { name: session?.user?.name, text: textarea },
+        {
+          name: session?.user?.name,
+          text: textarea,
+          image: session.user.image,
+        },
       ];
     }
     const newRecord = await pb
@@ -70,7 +80,12 @@ export default function ApplicationChat({
         {record.msgs &&
           record.msgs.map((msg: any, index: number) => {
             return (
-              <ApplicationMessage name={msg.name} text={msg.text} key={index} />
+              <ApplicationMessage
+                image={msg.image}
+                name={msg.name}
+                text={msg.text}
+                key={index}
+              />
             );
           })}
       </div>

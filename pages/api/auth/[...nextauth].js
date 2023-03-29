@@ -34,16 +34,12 @@ export const authOptions = {
     session: async ({ session, token }) => {
       if (session?.user) {
         session.user.id = token.uid;
-        session.accessToken = token.accessToken;
       }
       return session;
     },
     jwt: async ({ user, token, account }) => {
       if (user) {
         token.uid = user.id;
-      }
-      if (account) {
-        token.accessToken = account.access_token;
       }
       return token;
     },
