@@ -12,6 +12,7 @@ import styles from './application.module.css';
 import { useSession } from 'next-auth/react';
 import NotFound from '../ui/not-found/not-found';
 import YesNo from '../yes-no/yes-no';
+import ApplicationChat from '../application-chat/application-chat';
 
 export default function Application() {
   const [isLoading, setLoading] = useState(true);
@@ -19,7 +20,6 @@ export default function Application() {
   const [counter, setCounter] = useState(0);
   const { data: session }: any = useSession();
   const pb = new PocketBase(dbURL);
-
   const games: any = {
     lostArk: 'Lost ark',
     atlas: 'Atlas',
@@ -151,6 +151,12 @@ export default function Application() {
 
   return (
     <>
+      {session?.user?.id == 904710068459687986 && (
+        <div className={styles.billyButtons}>
+          <Button onClick={() => handleApprove()}>Approve</Button>
+          <Button onClick={() => declineApprove()}>Decline</Button>
+        </div>
+      )}
       <div className={styles.application}>
         <Button className={styles.arrow} onClick={() => handleLeft()}>
           ‹
@@ -264,12 +270,13 @@ export default function Application() {
           ›
         </Button>
       </div>
-      {session?.user?.id === process.env.DISCORD_BILLY_ID && (
-        <div className={styles.billyButtons}>
-          <Button onClick={() => handleApprove()}>Approve</Button>
-          <Button onClick={() => declineApprove()}>Decline</Button>
-        </div>
-      )}
+      <ApplicationChat
+        pb={pb}
+        record={records[counter]}
+        setRecords={setRecords}
+        records={records}
+        counter={counter}
+      />
     </>
   );
 }

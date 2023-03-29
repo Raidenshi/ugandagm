@@ -13,4 +13,10 @@
 .buttons button {
   margin-left: 30px;
   margin-bottom: 40px;
+  border-radius: 0%;
+  border: none;
+}
+
+.buttons button.active {
+  border-bottom: 3px solid var(--main-red);
 }

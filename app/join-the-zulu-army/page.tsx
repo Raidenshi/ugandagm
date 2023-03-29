@@ -91,7 +91,7 @@ export default function JoinTheZulu() {
       <Rules />
       <form className={styles.form} onSubmit={handleSumbit}>
         <div className={`${styles.container} ${workSans.className}`}>
-          <label htmlFor="steam">Your main Steam account</label>
+          <label htmlFor="steam">Link to your main Steam account</label>
           <input
             value={form.steam || ''}
             onChange={handleChange}

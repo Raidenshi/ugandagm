@@ -1,8 +1,6 @@
 'use client';
 import { dbURL } from '../../../utils/const';
 import { useEffect, useState } from 'react';
-import { tribeca } from '../../../utils/fonts';
-import Image from 'next/image';
 
 import styles from '../gallery.module.css';
 import NotFound from '../../components/ui/not-found/not-found';
@@ -14,7 +12,7 @@ import GalleryImages from '../../components/gallery-images/gallery-images';
 export const revalidate = 0;
 
 export default function page({ params }: any) {
-  const [toggle, setToggle] = useState('videos');
+  const [toggle, setToggle] = useState('images');
   const [isLoading, setLoading] = useState(false);
   const [records, setRecords]: any = useState(null);
   const game = params.name;
@@ -35,8 +33,18 @@ export default function page({ params }: any) {
   return (
     <>
       <div className={styles.buttons}>
-        <Button onClick={() => setToggle('images')}>Images</Button>
-        <Button onClick={() => setToggle('videos')}>Videos</Button>
+        <Button
+          onClick={() => setToggle('images')}
+          className={toggle === 'images' ? styles.active : ''}
+        >
+          Images
+        </Button>
+        <Button
+          onClick={() => setToggle('videos')}
+          className={toggle === 'videos' ? styles.active : ''}
+        >
+          Videos
+        </Button>
       </div>
       {toggle === 'videos' ? (
         <GalleryVideos videos={records.videos} />
