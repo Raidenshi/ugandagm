@@ -18,7 +18,17 @@ export default function Application() {
   const [isLoading, setLoading] = useState(true);
   const [records, setRecords]: any = useState(null);
   const [counter, setCounter] = useState(0);
+  const [active, setActive] = useState('');
   const { data: session }: any = useSession();
+
+  const checkVote = (record: any) => {
+    if (record.yes.includes(session.user.name)) {
+      setActive('yes');
+    } else if (record.no.includes(session.user.name)) {
+      setActive('no');
+    } else setActive('');
+  };
+
   const pb = new PocketBase(dbURL);
   const games: any = {
     lostArk: 'Lost ark',
@@ -38,6 +48,7 @@ export default function Application() {
       .then((data) => {
         setRecords(data.items);
         setLoading(false);
+        checkVote(data.items[0]);
       });
   }, []);
 
@@ -72,6 +83,7 @@ export default function Application() {
       }
     });
     setRecords(newRecords);
+    setActive('yes');
   };
 
   const handleDecrease = async () => {
@@ -105,6 +117,7 @@ export default function Application() {
       }
     });
     setRecords(newRecords);
+    setActive('no');
   };
 
   const handleApprove = async () => {
@@ -115,9 +128,10 @@ export default function Application() {
       return counter !== i;
     });
     setRecords(newRecords);
+    checkVote(records[counter + 1]);
   };
 
-  const declineApprove = async () => {
+  const handleDecline = async () => {
     await pb.collection('applications_declined').create(records[counter]);
     await pb.collection('applications_pending').delete(records[counter].id);
 
@@ -125,6 +139,7 @@ export default function Application() {
       return counter !== i;
     });
     setRecords(newRecords);
+    checkVote(records[counter + 1]);
   };
 
   const handleLeft = () => {
@@ -132,6 +147,7 @@ export default function Application() {
       return;
     }
     setCounter(counter - 1);
+    checkVote(records[counter - 1]);
   };
 
   const handleRight = () => {
@@ -139,6 +155,7 @@ export default function Application() {
       return;
     }
     setCounter(counter + 1);
+    checkVote(records[counter + 1]);
   };
 
   if (isLoading) {
@@ -154,7 +171,7 @@ export default function Application() {
       {session?.user?.id == 904710068459687986 && (
         <div className={styles.billyButtons}>
           <Button onClick={() => handleApprove()}>Approve</Button>
-          <Button onClick={() => declineApprove()}>Decline</Button>
+          <Button onClick={() => handleDecline()}>Decline</Button>
         </div>
       )}
       <div className={styles.application}>
@@ -162,6 +179,9 @@ export default function Application() {
           ‹
         </Button>
         <div className={`${styles.container} ${workSans.className}`}>
+          <span className={styles.voted}>
+            {new Date(records[counter].created).toLocaleDateString()}
+          </span>
           <span className={styles.voted}>
             People voted:{' '}
             {records[counter].yes.length + records[counter].no.length}
@@ -171,6 +191,7 @@ export default function Application() {
             no={records[counter].no.length}
             handleIncrease={handleIncrease}
             handleDecrease={handleDecrease}
+            active={active}
           />
           <p>
             <span>Discord:</span>
