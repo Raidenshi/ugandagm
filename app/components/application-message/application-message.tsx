@@ -14,11 +14,11 @@ export default function ApplicationMessage({
 }) {
   return (
     <div className={`${workSans.className} ${styles.container}`}>
+      <p className={styles.name}>{`${name}`}</p>
       <div>
-        <p className={styles.name}>{`${name}`}</p>
         <img className={styles.image} src={`${image}`} alt="pfp" />
+        <p className={styles.text}>{text}</p>
       </div>
-      <p className={styles.text}>{text}</p>
     </div>
   );
 }

@@ -12,7 +12,7 @@ export default function Home() {
       <Image
         src={mainLogo}
         alt="Main logo"
-        width={600}
+        width={800}
         className={styles.logo}
       />
       <div className={styles.pattern} />

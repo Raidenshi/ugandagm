@@ -65,17 +65,6 @@ export default function ApplicationChat({
 
   return (
     <>
-      <div className={styles.container}>
-        <textarea
-          className={`${workSans.className} ${styles.txt}`}
-          onChange={(e) => setTextarea(e.target.value)}
-          value={textarea || ''}
-          maxLength={200}
-        />
-        <Button className={styles.button} onClick={() => handleSend()}>
-          Send
-        </Button>
-      </div>
       <div className={styles.msgs}>
         {record.msgs &&
           record.msgs.map((msg: any, index: number) => {
@@ -88,6 +77,17 @@ export default function ApplicationChat({
               />
             );
           })}
+      </div>
+      <div className={styles.container}>
+        <textarea
+          className={`${workSans.className} ${styles.txt}`}
+          onChange={(e) => setTextarea(e.target.value)}
+          value={textarea || ''}
+          maxLength={200}
+        />
+        <Button className={styles.button} onClick={() => handleSend()}>
+          Send
+        </Button>
       </div>
     </>
   );
