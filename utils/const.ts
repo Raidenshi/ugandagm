@@ -1,1 +1,1 @@
-export const dbURL = 'http://78.141.192.184:4000';
+export const dbURL = 'http://158.160.37.106:3001';
