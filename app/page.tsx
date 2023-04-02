@@ -14,6 +14,7 @@ export default function Home() {
         alt="Main logo"
         width={800}
         className={styles.logo}
+        priority
       />
       <div className={styles.pattern} />
       <h1 className={`${tribeca.className} ${styles.heading}`}>
