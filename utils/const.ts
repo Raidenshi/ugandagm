@@ -1,1 +1,1 @@
-export const dbURL = 'http://db.ugandagaming.net';
+export const dbURL = 'https://db.ugandagaming.net';
