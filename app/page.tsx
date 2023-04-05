@@ -37,7 +37,7 @@ export default function Home() {
           </p>
           <p>
             If you are interested in joining Uganda, head on over to{' '}
-            <Link href="/join-the-zulu-army" className={styles.link}>
+            <Link href="/join-us" className={styles.link}>
               Join the Zulu Army
             </Link>
           </p>

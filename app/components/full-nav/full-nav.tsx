@@ -40,7 +40,7 @@ export default function FullNav({ pathName }: { pathName: string }) {
       </ul>
       <div className={styles.welcome}>
         <h1 className={`${styles.heading} ${tribeca.className}`}>
-          WELCOME TO UGANDA !
+          WELCOME TO UGANDA!
         </h1>
         <div className={styles.buttons}>
           <Link href="https://discord.gg/uganda" target={'_blank'}>

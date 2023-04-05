@@ -8,7 +8,7 @@
 
   font-size: 24px;
 
-  cursor: pointer;
+  cursor: var(--cursor-pointer), auto;
 
   transition: background-color 0.3s;
 }

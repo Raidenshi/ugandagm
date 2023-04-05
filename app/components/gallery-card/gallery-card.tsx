@@ -12,7 +12,7 @@ export default function GalleryCard({
 }) {
   return (
     <Link href={`gallery/${name}`}>
-      <img className={styles.image} src={image} />;
+      <img className={styles.image} src={image} />
     </Link>
   );
 }

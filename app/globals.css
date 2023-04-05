@@ -9,6 +9,7 @@
   --main-red: #d90008;
   --main-white: #efefef;
   --margin-footer: 80px;
+  --cursor-pointer: url(../public/zululpointer.svg);
 }
 
 * {
@@ -25,6 +26,7 @@ body {
 
 body {
   background-color: var(--main-yellow);
+  cursor: url(../public/zululcursor.svg), auto;
 }
 
 body::-webkit-scrollbar {
@@ -53,4 +55,8 @@ hr {
   margin: 20px 0;
   border: none;
   background-color: var(--main-red);
+}
+
+a {
+  cursor: var(--cursor-pointer), auto;
 }
