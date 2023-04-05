@@ -59,7 +59,7 @@
   display: inline-flex;
   align-items: center;
   user-select: none;
-  cursor: pointer;
+  cursor: url(../../public/zululpointer.svg), auto;
 }
 .custom__checkbox + label::before {
   content: '';

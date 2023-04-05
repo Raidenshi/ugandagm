@@ -24,7 +24,8 @@ body {
   overflow-x: hidden;
 }
 
-body {
+body,
+html {
   background-color: var(--main-yellow);
   cursor: url(../public/zululcursor.svg), auto;
 }
@@ -57,6 +58,7 @@ hr {
   background-color: var(--main-red);
 }
 
-a {
+a,
+label {
   cursor: var(--cursor-pointer), auto;
 }
