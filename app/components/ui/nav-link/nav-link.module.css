@@ -21,7 +21,7 @@
 
 .active:hover {
   color: var(--main-black);
-  cursor: default;
+  cursor: url(../../../../public/zululcursor.svg), auto;
 }
 
 @media (min-width: 2048px) {
