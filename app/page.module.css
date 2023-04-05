@@ -6,25 +6,31 @@
   min-height: 100vh;
 }
 
-.logo {
-  filter: drop-shadow(15px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
 .pattern {
   width: 100vw;
   height: 82px;
-  margin-top: 30px;
-  margin-bottom: 30px;
   background: url(../public/pattern.webp);
 }
 
-.heading {
-  margin-bottom: 30px;
+.pattern:nth-of-type(1) {
+  margin-bottom: 80px;
+}
 
-  text-align: center;
-  font-weight: normal;
-  color: black;
-  font-size: 4rem;
+.pattern:nth-of-type(2) {
+  margin-top: 80px;
+}
+
+.introduction {
+  display: flex;
+  justify-content: space-between;
+  gap: 200px;
+
+  margin-top: 80px;
+}
+
+.bird {
+  max-width: 400px;
+  height: fit-content;
 }
 
 .text {
@@ -32,11 +38,9 @@
   flex-direction: column;
   gap: 35px;
 
-  margin-top: 40px;
-  margin-bottom: var(--margin-footer);
+  max-width: 800px;
 
-  text-align: center;
-  font-size: 22px;
+  font-size: 42px;
   font-weight: 600;
 }
 
@@ -51,45 +55,67 @@
   transition: 0.3s;
 }
 
-.pastor__container {
-  position: relative;
-  width: 100vw;
-  height: 10px;
-}
-
-.pastor {
-  position: absolute;
-  left: 100%;
-
-  width: 20vw;
-  height: fit-content;
-
-  transform: translate(-110%, calc(-100% + 10px));
-  filter: drop-shadow(12px 0 0 var(--main-red));
-}
-
 .video {
-  width: 640px;
-  height: 360px;
+  width: 50vw;
+  height: 28vw;
+}
+
+@media (max-width: 1320px) {
+  .text {
+    font-size: 32px;
+    max-width: 900px;
+  }
+  .bird {
+    max-width: 25vw;
+  }
+}
+
+@media (max-width: 1100px) {
+  .introduction {
+    gap: 150px;
+  }
+  .video {
+    width: 63vw;
+    height: 35vw;
+  }
+  .text {
+    font-size: 28px;
+    width: 400px;
+  }
+  .bird {
+    max-width: 30vw;
+  }
+}
+
+@media (max-width: 880px) {
+  .introduction {
+    gap: 50px;
+  }
+  .text {
+    font-size: 22px;
+    width: 300px;
+  }
+  .bird {
+    max-width: 35vw;
+  }
 }
 
 @media (max-width: 620px) {
+  .introduction {
+    gap: 50px;
+  }
+  .text {
+    font-size: 18px;
+  }
+  .bird {
+    display: none;
+  }
   .main {
     padding-left: 50px;
     padding-right: 50px;
   }
-  .logo {
-    width: 90vw;
-    height: fit-content;
-  }
   .video {
     width: 95vw;
     height: 55vw;
-  }
-}
-
-@media (max-width: 800px) {
-  .pastor {
-    width: 30vw;
   }
 }

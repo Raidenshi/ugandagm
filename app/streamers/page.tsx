@@ -5,11 +5,11 @@ import { dbURL } from '../../utils/const';
 import { getRecords } from '../../services/pocketBase';
 import NotFound from '../components/ui/not-found/not-found';
 
-import styles from './content-creators.module.css';
+import styles from './streamers.module.css';
 
 export const revalidate = 0;
 
-export default async function ContentCreators() {
+export default async function Streamers() {
   const pb = new PocketBase(dbURL);
   const records: any = (await getRecords('content_creators', pb)) || null;
 

@@ -1,24 +1,42 @@
 .header {
-  height: 110px;
-  padding: 0 120px;
-  border-radius: 0px 0px 50px 50px;
-
-  background-color: var(--main-black);
+  padding: 50px 120px;
 }
 
 .logo {
-  align-self: flex-end;
+  width: 30vw;
+  height: fit-content;
 }
 
 .navbar {
   height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 @media (max-width: 1600px) {
   .header {
-    padding: 0 60px;
+    padding: 50px 60px;
+  }
+  .logo {
+    width: 35vw;
+  }
+}
+
+@media (max-width: 1320px) {
+  .header {
+    padding: 50px 45px;
+  }
+  .logo {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 880px) {
+  .header {
+    padding: 50px 30px;
+  }
+  .logo {
+    width: 60vw;
   }
 }

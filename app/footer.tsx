@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import React from 'react';
+import { proximaLight } from '../utils/fonts';
 import styles from './footer.module.css';
 
 function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className={`${proximaLight.className} ${styles.footer}`}>
       <Link
         href="https://discord.gg/uganda"
         target={'_blank'}

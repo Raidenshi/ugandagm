@@ -6,7 +6,7 @@ import Button from '../components/ui/button/button';
 import PocketBase from 'pocketbase';
 import { dbURL } from '../../utils/const';
 
-import styles from './join-the-zulu.module.css';
+import styles from './join-us.module.css';
 
 interface games {
   lostArk?: boolean;
@@ -38,7 +38,7 @@ interface IForm {
   no?: string[];
 }
 
-export default function JoinTheZulu() {
+export default function JoinUs() {
   const pb = new PocketBase(dbURL);
 
   const initialState: IForm = {
@@ -274,7 +274,7 @@ export default function JoinTheZulu() {
             MUGA games
           </label>
 
-          <label htmlFor="otherCommunities">
+          <label htmlFor="otherCommunities" className={styles.marginb}>
             Have you been a part of other communities?{' '}
             <span>( List them, if you did )</span>
           </label>

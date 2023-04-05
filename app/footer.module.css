@@ -5,13 +5,14 @@
 
   height: 100px;
   padding: 0 110px 0 110px;
-  background-color: var(--main-black);
+  background-color: var(--main-red);
+  margin-top: var(--margin-footer);
 }
 
 .footer__link,
 .footer__secret {
   font-size: 28px;
-  color: var(--main-white);
+  color: var(--main-black);
 }
 
 .footer__secret {

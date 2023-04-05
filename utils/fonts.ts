@@ -6,3 +6,11 @@ export const tribeca = localFont({
   display: 'swap',
 });
 export const workSans = Work_Sans({ subsets: ['latin'] });
+export const proxima = localFont({
+  src: '../fonts/proxima-black.ttf',
+  display: 'swap',
+});
+export const proximaLight = localFont({
+  src: '../fonts/proxima-light.ttf',
+  display: 'swap',
+});

@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from '../public/logo.webp';
+import logo from '../public/UgandaGamingLogo.svg';
 import { usePathname } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -40,8 +40,8 @@ function Menu() {
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
-        <Link href="/" className={styles.logo}>
-          <Image src={logo} alt="logo" width={95} height={95} priority />
+        <Link href="/">
+          <Image src={logo} alt="Logo" priority className={styles.logo} />
         </Link>
         {isBreakpoint ? <MobileNav /> : <FullNav pathName={pathName!} />}
       </nav>

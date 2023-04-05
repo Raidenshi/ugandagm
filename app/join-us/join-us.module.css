@@ -15,26 +15,30 @@
   margin-bottom: 10px;
 }
 
+.form label:nth-child(1) {
+  margin-top: 25px;
+}
+
 .form input:not([type='checkbox']),
 .form select {
   width: 100%;
-  padding: 5px 10px;
+  padding: 7px 10px;
   margin-bottom: 20px;
 
-  background-color: var(--main-black);
-  border-radius: 8px;
-  border: 1px solid var(--main-red);
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--main-red);
 
   font-size: 18px;
-  color: var(--main-red);
+  color: var(--main-black);
 }
 
-.form select {
-  width: auto;
+.marginb {
+  margin-top: 25px;
 }
 
 .form input::placeholder {
-  color: rgba(235, 30, 38, 0.8);
+  color: #1d1d18cd;
 }
 
 .form .checkbox__label {
@@ -80,7 +84,7 @@
 }
 
 .custom__checkbox:focus + label::before {
-  box-shadow: 0 0 0 0.2rem rgba(235, 30, 38, 0.25);
+  box-shadow: 0 0 0 0.2rem #d900079a;
 }
 
 .send {

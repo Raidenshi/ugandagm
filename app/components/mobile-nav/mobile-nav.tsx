@@ -26,13 +26,13 @@ export default function MobileNav() {
           <Link href="/gallery">Gallery</Link>
         </li>
         <li onClick={() => setActive(false)}>
-          <Link href="/content-creators">Content Creators</Link>
+          <Link href="/streamers">Streamers</Link>
         </li>
         <li onClick={() => setActive(false)}>
           <Link href="/wakaliwood">Uganda & Wakaliwood Studios</Link>
         </li>
         <li onClick={() => setActive(false)}>
-          <Link href="/join-the-zulu-army">Join The Zulu Army</Link>
+          <Link href="/join-us">Join Us</Link>
         </li>
         <li onClick={() => setActive(false)}>
           <Link
