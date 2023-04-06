@@ -1,3 +1,12 @@
 .video {
   margin-bottom: 40px;
+  width: 560px;
+  height: 315px;
+}
+
+@media (max-width: 600px) {
+  .video {
+    width: 90vw;
+    height: 50.6vw;
+  }
 }

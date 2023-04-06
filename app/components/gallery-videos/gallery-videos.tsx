@@ -10,8 +10,6 @@ export default function GalleryVideos({ videos }: { videos: Array<string> }) {
         videos.map((id) => {
           return (
             <iframe
-              width="560"
-              height="315"
               src={`https://www.youtube-nocookie.com/embed/${id}`}
               title="YouTube video player"
               frameBorder="0"

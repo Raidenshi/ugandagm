@@ -12,11 +12,12 @@ export default async function Gallery() {
 
   return (
     <div className={styles.container}>
-      {records.map((record: any) => {
+      {records.map((record: any, i: number) => {
         return (
           <GalleryCard
             name={record.name}
             image={pb.getFileUrl(record, record.image)}
+            key={i}
           />
         );
       })}

@@ -26,7 +26,7 @@ export default async function Streamers() {
   return (
     <>
       <h1 className={`${tribeca.className} ${styles.header}`}>
-        Ugandan streamers
+        Ugandan content creators
       </h1>
       <div className={styles.container}>
         {records ? creatorsList : <NotFound />}
