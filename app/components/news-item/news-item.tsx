@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { tribeca, workSans } from '../../../utils/fonts';
 
