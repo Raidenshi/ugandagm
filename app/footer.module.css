@@ -12,7 +12,8 @@
 .footer__link,
 .footer__secret {
   font-size: 28px;
-  color: var(--main-black);
+  font-weight: 600;
+  color: var(--main-white);
 }
 
 .footer__secret {
