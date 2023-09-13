@@ -58,12 +58,8 @@ export default function JoinUs() {
     no: [],
     otherCommunities: 'no',
   };
-  const [select, useSelect] = useState(false);
-  const [form, setForm] = useState<IForm>(initialState);
 
-  const showCommunities = (e: React.SyntheticEvent) => {
-    useSelect(!select);
-  };
+  const [form, setForm] = useState<IForm>(initialState);
 
   const handleSumbit = async (e: React.SyntheticEvent) => {
     e.preventDefault();

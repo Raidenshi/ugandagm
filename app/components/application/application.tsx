@@ -193,95 +193,72 @@ export default function Application() {
             handleDecrease={handleDecrease}
             active={active}
           />
-          <p>
+          <div>
             <span>Discord:</span>
             {records[counter].discord}
-          </p>
-          <p>
-            <span>Steam:</span>
+          </div>
+          <div>
+            <span>Steam: </span>
             <Link
               className={styles.link}
               href={records[counter].steam}
               target="_blank"
             >
-              Steam
+              {records[counter].steam}
             </Link>
-          </p>
+          </div>
 
-          <p>
-            <span>Twitch:</span>
+          <div>
+            <span>Twitch: </span>
             {records[counter].twitch}
-          </p>
-          <p>
-            <span>Logs in:</span>
-            <Link
-              className={styles.link}
-              href={`https://logs.ivr.fi/?channel=forsen&username=${records[counter].twitch}`}
-              target="_blank"
-            >
-              forsen
-            </Link>{' '}
-            <Link
-              className={styles.link}
-              href={`https://logs.ivr.fi/?channel=xqc&username=${records[counter].twitch}`}
-              target="_blank"
-            >
-              xqc
-            </Link>
-          </p>
-          <div className={styles.question}>
-            <span>How did you find Uganda?</span>
-            <p>{records[counter].howFound}</p>
           </div>
-          <div className={styles.question}>
-            <span>Do you know anyone currently in Uganda?</span>
-            <p>{records[counter].friends}</p>
+          <div>
+            <span>How did you find Uganda: </span>
+            {records[counter].howFound}
           </div>
-          <div className={styles.question}>
-            <span>What is your timezone?</span>
-            <p>{records[counter].timeZone}</p>
+          <div>
+            <span>Do you know anyone currently in Uganda: </span>
+            {records[counter].friends}
+          </div>
+          <div>
+            <span>What is your timezone: </span>
+            {records[counter].timeZone}
           </div>
 
           <div className={styles.question}>
             <span>Games played with Uganda:</span>
-            <ul>
-              {Object.keys(records[counter].gamesPlayed).length ? (
-                Object.keys(records[counter].gamesPlayed).map(
+
+            {Object.keys(records[counter].gamesPlayed).length
+              ? Object.keys(records[counter].gamesPlayed).map(
                   (game: string, i) => {
-                    return <li key={i}>{games[game]}</li>;
+                    return `${games[game]}, `;
                   }
                 )
-              ) : (
-                <Image src={clueless} alt="clueless" width="64" height="70" />
-              )}
-            </ul>
+              : ''}
+          </div>
+          <div>
+            <span>Any other communities: </span>
+            {records[counter].otherCommunities}
           </div>
           <div className={styles.question}>
-            <span>Any other communities?</span>
-            <p>{records[counter].otherCommunities}</p>
+            <span>Do you like gachi: </span>
+            {records[counter].gachi}
+          </div>
+          <div>
+            <span>What country are you from: </span>
+            {records[counter].country}
           </div>
           <div className={styles.question}>
-            <span>Do you like gachi?</span>
-            <p>{records[counter].gachi}</p>
-          </div>
-
-          <div className={styles.question}>
-            <span>What country are you from?</span>
-            <p>{records[counter].country}</p>
+            <span>Languages:</span>
+            {records[counter].language}
           </div>
           <div className={styles.question}>
-            <span>
-              List your main language and other languages you can speak
-            </span>
-            <p>{records[counter].language}</p>
+            <span>Why are you applying:</span>
+            {records[counter].reason}
           </div>
           <div className={styles.question}>
-            <span>Why are you applying?</span>
-            <p>{records[counter].reason}</p>
-          </div>
-          <div className={styles.question}>
-            <span>Is there anything else you would like to add?</span>
-            <p>{records[counter].add}</p>
+            <span>Is there anything else you would like to add: </span>
+            {records[counter].add}
           </div>
           <span className={styles.page}>{`${counter + 1}/${
             records.length
