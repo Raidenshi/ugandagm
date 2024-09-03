@@ -13,11 +13,6 @@ export default function FullNav({ pathName }: { pathName: string }) {
     <div className={styles.links}>
       <ul className={`${styles.list} ${proximaLight.className}`}>
         <li>
-          <NavLink path="/news" currentPath={pathName!}>
-            News
-          </NavLink>
-        </li>
-        <li>
           <NavLink path="/gallery" currentPath={pathName!}>
             Gallery
           </NavLink>

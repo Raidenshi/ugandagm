@@ -12,4 +12,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           script: |
-            touch privet
+            cd ugandagm
+            git pull 
+            npm run build 
+            pm2 reload all 

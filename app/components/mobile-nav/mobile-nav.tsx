@@ -20,9 +20,6 @@ export default function MobileNav() {
         }`}
       >
         <li onClick={() => setActive(false)}>
-          <Link href="/news">News</Link>
-        </li>
-        <li onClick={() => setActive(false)}>
           <Link href="/gallery">Gallery</Link>
         </li>
         <li onClick={() => setActive(false)}>

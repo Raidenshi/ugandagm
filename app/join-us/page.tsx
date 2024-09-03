@@ -99,7 +99,7 @@ export default function JoinUs() {
           />
 
           <label htmlFor="discord">
-            Discord name <span>(your tag, Zulu#7777)</span>
+            Discord username
           </label>
           <input
             value={form.discord || ''}
