@@ -1,0 +1,14 @@
+name: CI/CD
+on: [push]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          key: ${{ secrets.KEY}}
+          port: ${{ secrets.PORT }}
+          script: |
+            touch privet
